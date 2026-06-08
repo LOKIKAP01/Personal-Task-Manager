@@ -57,12 +57,11 @@ function App() {
   `https://personal-task-manager-p34g.onrender.com/api/tasks/${id}`)
     .then(() => {
 
-      const updatedTasks =
-        tasks.filter(task => task.id !== id);
+  setTasks(prevTasks =>
+    prevTasks.filter(task => task.id !== id)
+  );
 
-      setTasks(updatedTasks);
-
-    })
+})
     .catch((error) => {
       console.log(error);
     });

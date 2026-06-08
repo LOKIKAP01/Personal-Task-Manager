@@ -58,7 +58,7 @@ app.delete("/api/tasks/:id", (req, res) => {
   tasks = tasks.filter(task => task.id !== taskId);
   
   fs.writeFileSync(
-    "./data/tasks.json",
+    "./Data/tasks.json",
     JSON.stringify(tasks, null, 2)
   );
 
