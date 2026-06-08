@@ -53,8 +53,8 @@ function App() {
     return;
   }
 
-  axios
-    .delete("https://personal-task-manager-p34g.onrender.com/api/tasks")
+  axios.delete(
+  `https://personal-task-manager-p34g.onrender.com/api/tasks/${id}`)
     .then(() => {
 
       const updatedTasks =
@@ -70,8 +70,8 @@ function App() {
 
     const toggleTask = (id) => {
 
-  axios
-    .patch("https://personal-task-manager-p34g.onrender.com/api/tasks")
+      axios.patch(
+  `https://personal-task-manager-p34g.onrender.com/api/tasks/${id}`)
     .then(() => {
 
       const updatedTasks =
@@ -144,12 +144,14 @@ if (isNaN(selectedDate.getTime())) {
 
   if (newDueDate === null) return;
 
-  axios
-    .put("https://personal-task-manager-p34g.onrender.com/api/tasks", {
-      title: newTitle,
-      description: newDescription,
-      dueDate: newDueDate
-    })
+  axios.put(
+  `https://personal-task-manager-p34g.onrender.com/api/tasks/${id}`,
+  {
+    title: newTitle,
+    description: newDescription,
+    dueDate: newDueDate
+  }
+)
     .then(() => {
 
       const updatedTasks =
