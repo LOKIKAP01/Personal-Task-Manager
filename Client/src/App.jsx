@@ -30,7 +30,7 @@ function App() {
 });
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/tasks")
+      .get("https://personal-task-manager-p34g.onrender.com/api/tasks")
       .then((response) => {
         setTasks(response.data);
       })
@@ -54,7 +54,7 @@ function App() {
   }
 
   axios
-    .delete(`http://localhost:5000/api/tasks/${id}`)
+    .delete("https://personal-task-manager-p34g.onrender.com/api/tasks")
     .then(() => {
 
       const updatedTasks =
@@ -71,7 +71,7 @@ function App() {
     const toggleTask = (id) => {
 
   axios
-    .patch(`http://localhost:5000/api/tasks/${id}`)
+    .patch("https://personal-task-manager-p34g.onrender.com/api/tasks")
     .then(() => {
 
       const updatedTasks =
@@ -145,7 +145,7 @@ if (isNaN(selectedDate.getTime())) {
   if (newDueDate === null) return;
 
   axios
-    .put(`http://localhost:5000/api/tasks/${id}`, {
+    .put("https://personal-task-manager-p34g.onrender.com/api/tasks", {
       title: newTitle,
       description: newDescription,
       dueDate: newDueDate

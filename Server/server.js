@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 let tasks = [];
 
 try {
-  const data = fs.readFileSync("./data/tasks.json", "utf8");
+  const data = fs.readFileSync("./Data/tasks.json", "utf8");
 
   tasks = JSON.parse(data);
 
@@ -45,7 +45,7 @@ app.post("/api/tasks", (req, res) => {
 
   tasks.push(newTask);
   fs.writeFileSync(
-  "./data/tasks.json",
+  "./Data/tasks.json",
   JSON.stringify(tasks, null, 2)
 );
 
@@ -86,7 +86,7 @@ task.dueDate =
   req.body.dueDate || "";
 
   fs.writeFileSync(
-  "./data/tasks.json",
+  "./Data/tasks.json",
   JSON.stringify(tasks, null, 2)
 );
 
@@ -107,7 +107,7 @@ app.patch("/api/tasks/:id", (req, res) => {
   task.completed = !task.completed;
 
   fs.writeFileSync(
-  "./data/tasks.json",
+  "./Data/tasks.json",
   JSON.stringify(tasks, null, 2)
 );
 
